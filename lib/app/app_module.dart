@@ -5,14 +5,16 @@ import 'modules/home/home_module.dart';
 import 'modules/home/home_store.dart';
 import 'modules/shared/auth/auth_controller.dart';
 import 'modules/shared/auth/auth_repository.dart';
+import 'modules/shared/sembast/sambest.dart';
 
 class AppModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind<AuthRepository>((i) => AuthRepository(dio: i.get())),
+    Bind((i) => AuthRepository(dio: i.get())),
     Bind((i) => AuthController()),
     Bind((i) => Dio()),
     Bind((i) => HomeStore()),
+    Bind((i) => AppDatabase()),
   ];
 
   @override

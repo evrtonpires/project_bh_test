@@ -9,5 +9,6 @@ class HomeModule extends Module {
     Bind.lazySingleton((i) => HomeStore()),
   ];
 
+  @override
   List<ModularRoute> get routes => HomeRouting.routes;
 }

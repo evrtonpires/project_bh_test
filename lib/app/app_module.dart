@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'modules/home/home_module.dart';
+import 'modules/app_routing.dart';
 import 'modules/home/home_store.dart';
 import 'modules/shared/auth/auth_controller.dart';
 import 'modules/shared/auth/auth_repository.dart';
@@ -18,7 +18,5 @@ class AppModule extends Module {
   ];
 
   @override
-  final List<ModularRoute> routes = [
-    ModuleRoute(Modular.initialRoute, module: HomeModule()),
-  ];
+  List<ModularRoute> get routes => AppRouting.routes;
 }
